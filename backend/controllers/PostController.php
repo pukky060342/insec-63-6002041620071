@@ -49,6 +49,8 @@ class PostController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
+    }else{
+        echo "Please Login";
     }
 }
     /**
@@ -63,6 +65,8 @@ class PostController extends Controller
         return $this->render('view', [
             'model' => $this->findModel($id),
         ]);
+    }else{
+        echo "Please Login";
     }
     }
     /**
@@ -80,6 +84,8 @@ class PostController extends Controller
         return $this->render('create', [
             'model' => $model,
         ]);
+    }else{
+        echo "Please Login";
     }
     }
     /**
@@ -99,6 +105,8 @@ class PostController extends Controller
         return $this->render('update', [
             'model' => $model,
         ]);
+    }else{
+        echo "Please Login";
     }
     }
     /**
@@ -113,6 +121,8 @@ class PostController extends Controller
         if (Yii::$app->user->can('post-delete')){
         $this->findModel($id)->delete();
         return $this->redirect(['index']);
+    }else{
+        echo "Please Login";
     }
     }
     /**
