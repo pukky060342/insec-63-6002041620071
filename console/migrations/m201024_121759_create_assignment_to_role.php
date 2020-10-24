@@ -3,9 +3,9 @@
 use yii\db\Migration;
 
 /**
- * Class m201024_115001_create_assignment_to_role
+ * Class m201024_121759_create_assignment_to_role
  */
-class m201024_115001_create_assignment_to_role extends Migration
+class m201024_121759_create_assignment_to_role extends Migration
 {
     /**
      * {@inheritdoc}
@@ -17,10 +17,11 @@ class m201024_115001_create_assignment_to_role extends Migration
         $author = $auth->getRole('author');
         $admin = $auth->getRole('admin');
         $superAdmin = $auth->getRole('super-admin');
-
+    
         $auth->assign($superAdmin,1);
         $auth->assign($admin,2);
         $auth->assign($author,3);
+
     }
 
     /**
@@ -33,14 +34,15 @@ class m201024_115001_create_assignment_to_role extends Migration
         $author = $auth->getRole('author');
         $admin = $auth->getRole('admin');
         $superAdmin = $auth->getRole('super-admin');
-
+    
         $auth->revoke($superAdmin,1);
         $auth->revoke($admin,2);
         $auth->revoke($author,3);
-
+    
         return true;
+
         /*
-        echo "m201024_115001_create_assignment_to_role cannot be reverted.\n";
+        echo "m201024_121759_create_assignment_to_role cannot be reverted.\n";
 
         return false;
         */
@@ -55,7 +57,7 @@ class m201024_115001_create_assignment_to_role extends Migration
 
     public function down()
     {
-        echo "m201024_115001_create_assignment_to_role cannot be reverted.\n";
+        echo "m201024_121759_create_assignment_to_role cannot be reverted.\n";
 
         return false;
     }
